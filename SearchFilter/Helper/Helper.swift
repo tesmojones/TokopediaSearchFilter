@@ -29,7 +29,19 @@ extension String {
     }
     
     func asRupiah() -> String {
-        return self
+        var result: String = ""
+        let price = self.getValue().toDouble() as NSNumber
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "id_ID")
+        formatter.usesGroupingSeparator = true
+        formatter.currencyGroupingSeparator = "."
+        formatter.currencySymbol = "\(formatter.currencySymbol!) "
+        
+        if let formatted = formatter.string(from: price) {
+            result = formatted
+        }
+        return result
     }
     
     func getValue() -> Int {

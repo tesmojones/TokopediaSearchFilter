@@ -67,12 +67,14 @@ class SearchFilterPriceCell: UITableViewCell {
     // Called every time Min Texfield edited
     @IBAction func txtMinEdited(_ sender: Any) {
         rangeSlider.lowerValue = self.txtMinPrice.text!.getValue().toDouble()
+        self.txtMinPrice.text = self.txtMinPrice.text?.asRupiah()
         updateValue()
     }
     
     // Called every time Max Texfield edited
     @IBAction func txtMaxEdited(_ sender: Any) {
         rangeSlider.upperValue = self.txtMaxPrice.text!.getValue().toDouble()
+        self.txtMaxPrice.text = self.txtMaxPrice.text?.asRupiah()
         updateValue()
     }
     
