@@ -18,9 +18,9 @@ A simple Search Filter using Tokopedia API
 
 ## Minimum Requirements
 
-iOS 9.0 or higher
-Swift 4
-XCode 9
+1. iOS 9.0 or higher
+2. Swift 4
+3. XCode 9
 
 ## Author
 
