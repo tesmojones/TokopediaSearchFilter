@@ -42,6 +42,11 @@ class SearchFilterVC: BaseViewController {
         setupTableView()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tableView.reloadData()
+    }
+    
     // Setup current loaded param to view
     func setupCurrentParam() {
         self.pmin = (currentParams?.pmin?.getValue())!
@@ -237,6 +242,7 @@ extension SearchFilterVC: UITableViewDataSource {
                 cell.delegate = self
                 cell.selectionStyle = .none
                 cell.setup()
+                cell.rangeSlider.setNeedsLayout()
                 return cell
             }
         }
